@@ -1,0 +1,52 @@
+/* Navbar styling */
+.navbar {
+  overflow: hidden; /* Prevents overflow of child elements */
+  background-color: transparent; 
+  text-align: center;
+  margin-top: 20px; 
+  font-family: sans-serif; 
+  color: #ffffff; 
+  width: calc(100% - 120px); /* Adjusted width to accommodate the sidebar */
+  margin-left: 120px; /* Left margin to accommodate the sidebar */
+}
+
+.navbar a {
+  display: inline-block; /* Inline-block display for each link */
+  color: #ffffff;
+  font-size: 16px; 
+  text-decoration: none; /* Remove underline from links */
+  padding: 12px 20px;
+  box-sizing: border-box;
+  position: relative; 
+  transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+.navbar a:hover {
+  color: #ccc; /* Change text color to light gray on hover */
+}
+
+.navbar a::after {
+  content: ''; /* Insert an empty content */
+  position: absolute; 
+  left: 0;
+  bottom: 0; 
+  width: 100%; 
+  height: 4px; 
+  background-color: rgb(199, 168, 15); /* Color of the underline */
+  transform: scaleX(0); /* Initially scale the underline to zero */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for the scaling effect */
+}
+
+.navbar a:hover::after {
+  transform: scaleX(1); /* Scale the underline to full width on hover */
+}
+
+/* Logo at navbar */
+.logo {
+  display: inline-block; 
+  vertical-align: bottom; 
+  width: 50px; 
+  height: 50px; 
+  margin-right: 20px; /* Right margin to separate from links */
+  margin-top: 2px; /* Slight top margin to align with text */
+}

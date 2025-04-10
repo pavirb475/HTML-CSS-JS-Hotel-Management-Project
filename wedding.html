@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding and Conference Halls</title>
+    <link rel="stylesheet" href="stylewedding.css">
+    <link rel="stylesheet" href="stylenavbar.css">
+    <link href="https://fonts.googleapis.com/css2?family=Qwigley&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+
+</head>
+<body class="wedding">
+    <div class="navbar">
+        <img class="logo" src="logo.png" alt="Logo">
+        <a href="check.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="dining.html">Dining</a>
+        <a href="contribute.html">Booking</a>
+        <a href="wedding.html">Wedding & Conference</a>
+        <a href="review.html">Review</a>
+        <a href="memory.html">Memories</a>
+    </div>
+    <div class="container">
+        <h1 style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Wedding & Conference Halls</h1>
+        <br> <br>
+        <!-- Hall 1 -->
+        <div class="hall">
+            <img src="indoorwedding.jpg" alt="Indoor Wedding">
+            <div class="hall-info">
+                <div class="hall-name">Vadhya</div>
+                <div class="hall-price"> &#8377 50000</div>
+                <div class="buttons-container">
+                    <div class="menu-option" onclick="toggleDetails('details1')">ℹ️</div>
+            <button class="book-now" onclick="showModal()">Book Now</button>                </div>
+            </div>
+            <div class="hall-details" id="details1">
+                The Vadhya Hall is a stunning indoor venue designed to accommodate up to 2,000 guests. Our hotel management team takes care of all decorations and catering, ensuring a seamless and elegant wedding experience.
+            </div>
+        </div>
+        <!-- Hall 2 -->
+        <div class="hall">
+            <img src="outdoorwedding.jpg" alt="Outdoor Wedding">
+            <div class="hall-info">
+                <div class="hall-name">Nirthya</div>
+                <div class="hall-price">&#8377 35000</div>
+                <div class="buttons-container">
+                    <div class="menu-option" onclick="toggleDetails('details2')">ℹ️</div>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+            <div class="hall-details" id="details2">
+                The Nirthya Hall is a beautiful outdoor venue designed to host weddings for up to 1,000 guests. With its spacious layout and scenic surroundings, it's the ideal setting for an open-air celebration. Our hotel management provides decoration and catering, ensuring your special day is both memorable and stress-free.
+            </div>
+        </div>
+        <!-- Hall 3 -->
+        <div class="hall">
+            <img src="conferencehall.jpg" alt="Conference Hall">
+            <div class="hall-info">
+                <div class="hall-name">Sangitha</div>
+                <div class="hall-price">&#8377 25000</div>
+                <div class="buttons-container">
+                    <div class="menu-option" onclick="toggleDetails('details3')">ℹ️</div>
+                    <button class="book-now">Book Now</button>
+                </div>
+            </div>
+            <div class="hall-details" id="details3">
+                The Sangitha Hall is a cozy conference venue that comfortably accommodates between 10 and 15 attendees. This intimate space is ideal for small meetings, workshops, or private discussions. Our hotel team can also provide catering and additional amenities upon request, ensuring your event runs smoothly from start to finish.
+            </div>
+        </div>
+    </div>
+
+
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Book Your Hall</h2>
+            <form>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="date" id="date" name="date" required>
+                <div class="form-group">
+                    <input type="number" id="guests" name="guests" placeholder="Number of Guests" min="1" max="2000" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" name="phone" placeholder="Phone Number" required>
+                    <input type="email" id="email" name="email" placeholder="Email Address" required>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleDetails(id) {
+            const details = document.getElementById(id);
+            details.style.display = (details.style.display === "none" || details.style.display === "") 
+                ? "block" 
+                : "none";
+        }
+
+        function showModal() {
+            document.getElementById('bookingModal').style.display = 'block';
+        }
+
+
+        function closeModal() {
+            document.getElementById('bookingModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('bookingModal');
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+
+
+    </script>
+</body>
+</html>

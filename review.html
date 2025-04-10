@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hotel Review Section</title>
+<link rel="stylesheet" href="stylereview.css">
+<link rel="stylesheet" href="stylenavbar.css">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+rel="stylesheet"/>
+
+
+</head>
+<body class="review">
+
+    <div class="navbar">
+        <img class="logo" src="logo.png">
+        <a href="check.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="dining.html">Dining</a>
+        <a href="contribute.html">Booking</a>
+        <a href="wedding.html">Wedding&Conference</a>
+        <a href="review.html">Review</a>
+        <a href="memory.html">Memories</a>
+      </div>
+      
+
+
+
+    <header>
+      <div class="container">
+        <div class="container__left">
+          <h1>Leave a Review</h1>
+          <p>We encourage you to add a feedback.</p>
+          <textarea id="feedback" placeholder="Your feedback..."></textarea>
+          <button id="submit-feedback">Submit Feedback</button>
+        </div>
+  
+  
+        <div class="container__right">
+  
+          <div class="carousel-wrapper">
+            <div id="review-carousel" class="review-carousel">
+              
+              
+              
+              <div class="card active">
+                <img src="reshmitha.jpg" alt="user" />
+                <div class="card__content">
+                  <span><i class="ri-double-quotes-l"></i></span>
+                  <div class="card__details">
+                    <p>
+                        Absolutely delightful stay! Warm staff, luxurious rooms, and a delightful breakfast spread. Location couldn't be better!
+                    </p>
+                    <h4>- Reshmitha K R</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <img src="mithun.jpg" alt="user" />
+                <div class="card__content">
+                  <span><i class="ri-double-quotes-l"></i></span>
+                  <div class="card__details">
+                    <p>
+                        Incredible experience! Every detail was attended to with care. The room was pristine, the service impeccable, and the amenities top-notch.
+                    </p>
+                    <h4>- Mithun Dev</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <img src="anandhu.jpg" alt="user" />
+                <div class="card__content">
+                  <span><i class="ri-double-quotes-l"></i></span>
+                  <div class="card__details">
+                    <p>
+                        Exceeded expectations! From check-in to check-out, everything was seamless. The room was stylish and comfortable, and the staff went above and beyond.
+                    </p>
+                    <h4>- Anantha Krishnan</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-controls">
+              <button id="prev" class="arrow left"><i class="ri-arrow-left-s-line"></i></button>
+              <button id="next" class="arrow right"><i class="ri-arrow-right-s-line"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+      const cards = document.querySelectorAll(".card");
+      let currentCard = 0;
+      let interval;
+    
+      function showCard(index) {
+        cards.forEach((card, i) => {
+          card.classList.remove("active");
+          if (i === index) {
+            card.classList.add("active");
+          }
+        });
+      }
+    
+      function showNextCard() {
+        currentCard = (currentCard + 1) % cards.length;
+        showCard(currentCard);
+      }
+    
+      function showPrevCard() {
+        currentCard = (currentCard - 1 + cards.length) % cards.length;
+        showCard(currentCard);
+      }
+    
+      document.getElementById("next").addEventListener("click", function() {
+        clearInterval(interval);
+        showNextCard();
+        startAutoSlide();
+      });
+    
+      document.getElementById("prev").addEventListener("click", function() {
+        clearInterval(interval);
+        showPrevCard();
+        startAutoSlide();
+      });
+    
+      function startAutoSlide() {
+        interval = setInterval(showNextCard, 5000);
+      }
+    
+      document.getElementById("submit-feedback").addEventListener("click", function() {
+        alert("Your review has been submitted. Thank you for your cooperation.");
+        document.getElementById("feedback").value = ""; // Clear the textarea
+      });
+    
+      showCard(currentCard);
+      startAutoSlide();
+    });
+    </script>
+  </body>
+</html>
