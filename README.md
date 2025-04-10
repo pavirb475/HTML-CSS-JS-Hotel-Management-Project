@@ -1,0 +1,2 @@
+Padma is a visually appealing and user-friendly hotel management website built using HTML, CSS, and JavaScript. The website features a modern landing page with smooth navigation and a responsive layout. Users can explore sections like Dining, Booking, Reviews, and Memories, with a focus on luxury presentation and ease of use. It showcases interactive buttons, stylish fonts, and an elegant background image to enhance the overall user experience. The design prioritizes both aesthetics and functionality, providing a real-world look and feel for a professional hotel website.
+
